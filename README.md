@@ -1,1 +1,1 @@
-# react_template
+# example
