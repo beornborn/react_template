@@ -20,5 +20,6 @@ render(
       </Router>
     </div>
   </Provider>,
+  // $FlowIgnore
   document.getElementById('root')
 )

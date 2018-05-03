@@ -1,5 +1,5 @@
 //@flow
-import type Action from 'Types'
+import type { Action } from 'Types'
 import update from 'immutability-helper'
 import { createAction } from 'redux-actions'
 

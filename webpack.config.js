@@ -1,5 +1,4 @@
 var path = require('path')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: ['babel-polyfill', 'whatwg-fetch', './app/Root'],
@@ -12,11 +11,11 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: [/node_modules/, /notaviewer/, /pdf\.worker/],
+        exclude: [/node_modules/],
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['react', 'es2015', 'stage-0']
+            presets: ['react', 'env', 'stage-0']
           }
         }
       },
@@ -26,16 +25,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
-  plugins: [
-    new ExtractTextPlugin('styles.css')
-  ],
+  plugins: [],
   resolve: {
     extensions: ['.js', '.json', '.css'],
     modules: [path.join(__dirname, './app'), 'node_modules']

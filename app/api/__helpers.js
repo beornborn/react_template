@@ -2,11 +2,11 @@
 import 'whatwg-fetch'
 import _ from 'lodash'
 import { api } from 'Config'
-import { MethodType } from 'Types'
+import type { MethodType } from 'Types'
 // import Localstorage from 'services/Localstorage'
 
 export function checkStatus(response: Object) {
-  const status = response.status
+  const { status } = response
 
   if (_.range(200, 300).concat([401, 422]).includes(status)) {
     return response

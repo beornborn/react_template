@@ -1,7 +1,7 @@
 //@flow
 import { createStore, applyMiddleware, compose } from 'redux'
 import reducer from 'reducers'
-import createLogger from 'redux-logger'
+import { createLogger } from 'redux-logger'
 import createSagaMiddleware from 'redux-saga'
 import sagas from 'sagas'
 
